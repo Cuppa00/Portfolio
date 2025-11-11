@@ -1,0 +1,75 @@
+body, html {
+  margin: 0;
+  height: 100%;
+  padding: 0;
+  overflow: hidden;
+
+  font: bold 14px/1.4 'Open Sans', arial, sans-serif;
+
+  background: #E2D2A8;
+  background: linear-gradient(180deg,rgba(226, 210, 168, 1) 0%, rgba(245, 242, 237, 1) 100%);
+
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+.sansation-regular-italic {
+  font-family: "Sansation", sans-serif;
+  font-weight: 400;
+  font-style: italic;
+}
+
+ul {
+  font-family: "Sensation", sans-serif;
+  font-weight: 400;
+  font-style: italic;
+
+  margin: 150px auto 0;
+  padding: 0;
+  list-style: none;
+  display: table;
+  width: 600px;
+  text-align: center;
+}
+
+li {
+  display: table-cell;
+  position: relative;
+  padding: 15px 0;
+}
+
+a {
+  font-size: 36px;
+  color: #fff;
+  text-transform: uppercase;
+  text-decoration: none;
+  letter-spacing: 0.15em;
+  display: inline-block;
+  padding: 10px 25px;
+  position: relative;
+  text-shadow: 0 0 1px rgba(0,0,0,0.2);
+}
+
+a:after {
+  background: transparent;
+  bottom: 0;
+  content: "";
+  display: block;
+  height: 2px;
+  left: 50%;
+  position: absolute;
+  background: #fff;
+  transition: width 0.3s ease, left 0.3s ease;
+  width: 0;
+}
+
+a:hover:after {
+  width: 100%;
+  left: 0;
+}
+
+@media screen and (max-height: 300px) {
+  ul {
+    margin-top: 40px;
+  }
+}
