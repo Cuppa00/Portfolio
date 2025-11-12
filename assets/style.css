@@ -2,12 +2,10 @@ body, html {
   margin: 0;
   height: 100vh;
   padding: 0;
-  overflow: hidden;
+  overflow-x: hidden;
 
-  font: bold 14px/1.4 'Open Sans', arial, sans-serif;
-
-  background: #E2D2A8;
-  background: linear-gradient(180deg,rgba(226, 210, 168, 1) 0%, rgba(245, 242, 237, 1) 100%);
+  background: #4C5776;
+  background: linear-gradient(180deg, rgba(76, 87, 118, 1) 0%, rgba(245, 240, 230, 1) 100%);
 
   background-repeat: no-repeat;
   background-attachment: fixed;
@@ -18,23 +16,17 @@ body::before{
   content: "";
   position: fixed;
   inset: 0;                     /* top:0; right:0; bottom:0; left:0; */
-  background-image: url("../assets/grain.gif"); /* correct relative path */
+  background-image: url("grain.gif"); /* correct relative path */
   background-repeat: repeat;    /* tile small GIF for consistent coverage */
   background-size: auto;        /* or cover if you want it stretched */
-  opacity: 0.2;                /* adjust intensity */
+  opacity: 0.05;                /* adjust intensity */
   pointer-events: none;         /* allow interaction with page */
   mix-blend-mode: overlay;      /* optional: blends grain with gradient */
   z-index: 0;                   /* keep it behind content */
 }
 
-.sansation-regular-italic {
-  font-family: "Sansation", sans-serif;
-  font-weight: 400;
-  font-style: italic;
-}
-
 ul {
-  font-family: "Sensation", sans-serif;
+  font-family: "Sansation", sans-serif;
   font-weight: 400;
   font-style: italic;
 
@@ -61,7 +53,7 @@ a {
   display: inline-block;
   padding: 10px 25px;
   position: relative;
-  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+  text-shadow: -5px 5px 3px rgba(0, 0, 0, 0.3);
 }
 
 a:after {
@@ -75,12 +67,35 @@ a:after {
   background: #fff;
   transition: width 0.3s ease, left 0.3s ease;
   width: 0;
-  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+  box-shadow: -5px 5px 3px rgba(0, 0, 0, 0.3);
 }
 
 a:hover:after {
   width: 100%;
   left: 0;
+}
+
+#info-box {
+  font-family: "Sansation", sans-serif;
+  font-weight: 400;
+  font-size: medium;
+
+  background: #fff;
+  color: black;
+  border-radius: 12px;
+  width: 80%;
+  max-width: 500px;
+  margin: 20px auto 0;
+  padding: 20px;
+  text-align: center;
+  box-shadow: -5px 5px 3px rgba(0, 0, 0, 0.3);
+  transition: 0.3s ease;
+  opacity: 0;
+}
+
+#info-box.active {
+  display: block;
+  opacity: 1;
 }
 
 @media screen and (max-height: 300px) {
