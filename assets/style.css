@@ -1,6 +1,6 @@
 body, html {
   margin: 0;
-  height: 100%;
+  height: 100vh;
   padding: 0;
   overflow: hidden;
 
@@ -11,6 +11,20 @@ body, html {
 
   background-repeat: no-repeat;
   background-attachment: fixed;
+}
+
+/* grain GIF overlay */
+body::before{
+  content: "";
+  position: fixed;
+  inset: 0;                     /* top:0; right:0; bottom:0; left:0; */
+  background-image: url("../assets/grain.gif"); /* correct relative path */
+  background-repeat: repeat;    /* tile small GIF for consistent coverage */
+  background-size: auto;        /* or cover if you want it stretched */
+  opacity: 0.2;                /* adjust intensity */
+  pointer-events: none;         /* allow interaction with page */
+  mix-blend-mode: overlay;      /* optional: blends grain with gradient */
+  z-index: 0;                   /* keep it behind content */
 }
 
 .sansation-regular-italic {
@@ -39,15 +53,15 @@ li {
 }
 
 a {
-  font-size: 36px;
+  font-size: 5rem;
   color: #fff;
   text-transform: uppercase;
   text-decoration: none;
-  letter-spacing: 0.15em;
+  letter-spacing: 0.05em;
   display: inline-block;
   padding: 10px 25px;
   position: relative;
-  text-shadow: 0 0 1px rgba(0,0,0,0.2);
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
 }
 
 a:after {
@@ -55,12 +69,13 @@ a:after {
   bottom: 0;
   content: "";
   display: block;
-  height: 2px;
+  height: 0.4rem;
   left: 50%;
   position: absolute;
   background: #fff;
   transition: width 0.3s ease, left 0.3s ease;
   width: 0;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
 }
 
 a:hover:after {
