@@ -98,6 +98,35 @@ a:hover:after {
   opacity: 1;
 }
 
+/* Mobile */
+@media screen and (max-width: 700px) {
+  ul {
+    width: 100%;
+    display: block;
+    margin-top: 100px;
+  }
+
+  li {
+    display: block;
+    padding: 10px 0;
+  }
+
+  a {
+    font-size: 2.8rem;        /* scaled down for mobile */
+    padding: 10px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  a {
+    font-size: 2.2rem;        /* even smaller for very small phones */
+  }
+
+  ul {
+    margin-top: 70px;
+  }
+}
+
 @media screen and (max-height: 300px) {
   ul {
     margin-top: 40px;
